@@ -129,40 +129,43 @@ async def webpage(ctx, arg1, arg2):
             p = pages + 1
             pageX.add_field(name = f"Paragraph{p}", value = info_list[pages], inline = False)
             array.append(pageX)
-        message=await ctx.send(embed = array[0])
-        await message.add_reaction('\u23ee')
-        await message.add_reaction('\u25c0')
-        await message.add_reaction('\u25b6')
-        await message.add_reaction('\u23ed')
+        try:
+            message=await ctx.send(embed = array[0])
+            await message.add_reaction('\u23ee')
+            await message.add_reaction('\u25c0')
+            await message.add_reaction('\u25b6')
+            await message.add_reaction('\u23ed')
 
-        i = 0
-        emoji = ''
-        while True:
-            if emoji=='\u23ee':
-                i=0
-                await message.edit(embed = array[i])
-            if emoji=='\u25c0':
-                if i>0:
-                    i-=1
+            i = 0
+            emoji = ''
+            while True:
+                if emoji=='\u23ee':
+                    i=0
                     await message.edit(embed = array[i])
-            if emoji=='\u25b6':
-                if i < (int(arg2) -1):
-                    i+=1
+                if emoji=='\u25c0':
+                    if i>0:
+                        i-=1
+                        await message.edit(embed = array[i])
+                if emoji=='\u25b6':
+                    if i < (int(arg2) -1):
+                        i+=1
+                        await message.edit(embed = array[i])
+                if emoji=='\u23ed':
+                    i = (int(arg2)-1)
                     await message.edit(embed = array[i])
-            if emoji=='\u23ed':
-                i = (int(arg2)-1)
-                await message.edit(embed = array[i])
-            try:
-                def check(reaction,user):
-                    return reaction.message.id == message.id and reaction.message.guild.id == message.guild.id
-                res=await something.wait_for('reaction_add', timeout = 60.0, check = check)
-                if res==None:
+                try:
+                    def check(reaction,user):
+                        return reaction.message.id == message.id and reaction.message.guild.id == message.guild.id
+                    res=await something.wait_for('reaction_add', timeout = 60.0, check = check)
+                    if res==None:
+                        break
+                    if str(res[1])!='The_Lazy_Bot#4241':
+                        emoji=str(res[0].emoji)
+                        await message.remove_reaction(res[0].emoji,res[1])
+                except asyncio.TimeoutError:
                     break
-                if str(res[1])!='The_Lazy_Bot#4241':
-                    emoji=str(res[0].emoji)
-                    await message.remove_reaction(res[0].emoji,res[1])
-            except asyncio.TimeoutError:
-                break
+        except discord.HTTPException:
+            await ctx.send("Sorry, Couldn't retrieve the webpage")
 
 
 @something.command()
@@ -334,6 +337,14 @@ async def top(ctx, arg):
         i += 1
     await ctx.send(embed=embedVar)
 
+
+
+@something.command()
+async def talk(ctx,*args):
+    msg = ctx.message
+    if ctx.author.discriminator == '6826':
+        await msg.delete()
+        await ctx.send(f"{' '.join(args)}")
 
 
 something.run(token)
