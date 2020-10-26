@@ -349,6 +349,5 @@ async def talk(ctx,*args):
 
 something.run(token)
 
-
-#fs@c1ety
-#app name- the-very-lazy-bot
+                       
+                       
