@@ -8,8 +8,8 @@ def lead_webcr(arg):
     page = '/login'
     url = link_cr + page
     credentials = {
-        'email': '12rbot.OP@gmail.com',
-        'password': '12rgobrrrr'
+        'email': 'EMAIL',
+        'password': 'PASS'
     }
     text = ''
     res = []
@@ -51,8 +51,8 @@ def leaderb():
     page = '/login'
     url = link_cr + page
     credentials = {
-        'email': '12rbot.OP@gmail.com',
-        'password': '12rgobrrrr'
+        'email': 'EMAIL',
+        'password': 'PASS'
     }
     text = ''
     res = []
