@@ -11,7 +11,7 @@ import leaderboard
 import json
 import asyncio
 
-token = 'NzQxMzc0OTY4NjEyMjU3ODUy.Xy2pPg.R04bMQd6XQfoL0MEiEVA5ZQLUAM'
+token = 'MY_TOKEN' 
 
 something = commands.Bot(command_prefix='$', case_insensitive=True)
 something.remove_command('help')
