@@ -7,7 +7,7 @@ import json
 import SecretPages
 import leaderboard
 
-token = 'NzQ2MDE2MDE4Mzc5NDQwMTY4.Xz6Ljw.Zsprd_sPrMqlIVc5uPRi7La68AY'
+token = 'MY_TOKEN'
 
 something = commands.Bot(command_prefix='!')
 
