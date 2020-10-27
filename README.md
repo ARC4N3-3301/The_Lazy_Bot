@@ -12,8 +12,8 @@ The command prefix is: '$'
 
 Use $help in a server for knowing it's commands. 
 
-Here's the link to the owner's discord server:
+Contact the owner on discord: ARC4N3#6826
 
-https://discord.gg/ZcKz8BY
+
 
 API reference: https://discordpy.readthedocs.io/en/latest/api.html
