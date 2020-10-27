@@ -14,6 +14,8 @@ Use $help in a server for knowing it's commands.
 
 Contact the owner on discord: ARC4N3#6826
 
+Join the official test server through this link: https://discord.gg/CgXn4yM
+
 
 
 API reference: https://discordpy.readthedocs.io/en/latest/api.html
